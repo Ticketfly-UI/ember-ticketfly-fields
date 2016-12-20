@@ -1,0 +1,18 @@
+{{yield (hash
+  label=(component 'tf-input/input-label' 
+          sizeStyle=sizeStyle 
+          for=inputGuid 
+          shouldValidate=shouldValidate 
+          isValid=isValid)
+  input=(component 'tf-input' 
+          sizeStyle=sizeStyle 
+          id=inputGuid 
+          aria-describedby=describedByGuid 
+          shouldValidate=shouldValidate 
+          isValid=isValid)
+  description=(component 'tf-input/input-description' 
+                sizeStyle=sizeStyle 
+                id=describedByGuid 
+                shouldValidate=shouldValidate 
+                isValid=isValid)
+)}}
