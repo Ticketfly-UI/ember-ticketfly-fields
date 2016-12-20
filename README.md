@@ -1,11 +1,11 @@
-# ticketfly-fields
+# ember-ticketfly-fields
 
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd ticketfly-fields`
+* `cd ember-ticketfly-fields`
 * `npm install`
 * `bower install`
 
