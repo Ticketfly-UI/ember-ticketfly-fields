@@ -1,32 +1,32 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('tf-input', 'Integration | Component | tf-input', {
+moduleForComponent('tf-input-text', 'Integration | Component | tf-input-text', {
   integration: true
 });
 
-test('renders tf-input', function(assert) {
+test('renders tf-input-text', function(assert) {
   this.render(hbs`
-    {{tf-input}}
+    {{tf-input-text}}
   `);
   assert.ok(this.$('input').length, 'Input is rendered');
 });
 
 test('binds sizeStyle attribute to input sizing', function(assert) {
   this.render(hbs`
-    {{tf-input sizeStyle=sizeStyle}}
+    {{tf-input-text sizeStyle=sizeStyle}}
   `);
-  assert.ok(!this.$('input').hasClass('u-input-large') || !this.$('input').hasClass('u-input-small'), 
+  assert.ok(!this.$('input').hasClass('tf-input-text--large') || !this.$('input').hasClass('tf-input-text--small'), 
     'No input sizing specified by default');
   this.set('sizeStyle', 'large');
-  assert.ok(this.$('input').hasClass('u-input-large'), 'Input sizeStyle is large');
+  assert.ok(this.$('input').hasClass('tf-input-text--large'), 'Input sizeStyle is large');
 });
 
 test('validation states', function(assert) {
   this.set('shouldValidate', false);
   this.set('isValid', true);
   this.render(hbs`
-    {{tf-input shouldValidate=shouldValidate isValid=isValid}}
+    {{tf-input-text shouldValidate=shouldValidate isValid=isValid}}
   `);
   assert.ok(!this.$('input').hasClass('is-valid') || !this.$('input').hasClass('is-invalid'),
     'No class for validity when shouldValidate is false');

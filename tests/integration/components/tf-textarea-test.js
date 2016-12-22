@@ -9,5 +9,5 @@ test('renders tf-textarea', function(assert) {
   this.render(hbs`
     {{tf-textarea}}
   `);
-  assert.ok(this.$('textarea').length, 'Textarea is rendered');
+  assert.ok(this.$('textarea').hasClass('tf-textarea'), 'Textarea is rendered');
 });

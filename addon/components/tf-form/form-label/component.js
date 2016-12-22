@@ -2,20 +2,20 @@
   @module ember-ticketfly-fields
  */
 import Ember from 'ember';
-import SizingMixin from 'ember-ticketfly-fields/mixins/sizing-mixin';
-import ValidityMixin from 'ember-ticketfly-fields/mixins/validity-mixin';
+import SizingMixin from 'ember-ticketfly-fields/mixins/sizing';
+import ValidityMixin from 'ember-ticketfly-fields/mixins/validity';
 import layout from './template';
 const { Component } = Ember;
 
 /**
-  @class TfInputLabel
-  @extends Ember.Computed
+  @class FormLabel
+  @extends Ember.Component
  */
 const InputLabelComponent = Component.extend(SizingMixin, ValidityMixin, {
   layout,
 
   tagName: 'label',
-  classNameBindings: ['sizing', 'validity'],
+  classNameBindings: ['sizing', 'validity', 'blockElementName'],
   attributeBindings: ['for']
 });
 

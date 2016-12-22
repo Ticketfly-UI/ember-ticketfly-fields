@@ -2,6 +2,8 @@
   @module ember-ticketfly-fields
  */
 import Ember from 'ember';
+import SizingMixin from 'ember-ticketfly-fields/mixins/sizing';
+import ValidityMixin from 'ember-ticketfly-fields/mixins/validity';
 const { TextArea } = Ember;
 
 /**
@@ -9,6 +11,6 @@ const { TextArea } = Ember;
   @class TfTextarea
   @extends Ember.TextArea
  */
-export default TextArea.extend({
-  classNames: ['c-textarea']
+export default TextArea.extend(SizingMixin, ValidityMixin, {
+  classNames: ['tf-textarea']
 });

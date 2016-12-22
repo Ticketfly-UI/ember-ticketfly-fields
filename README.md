@@ -2,8 +2,8 @@
 
 This Ember addon provides the field components of the Ticketfly UI library. The components provided include:
 
-* `tf-input`
-* `tf-input-group`
+* `tf-input-text`
+* `tf-form`
 * `tf-textarea`
 
 ## Usage
@@ -12,48 +12,48 @@ This Ember addon provides the field components of the Ticketfly UI library. The 
 
 Template:
 ```hbs
-{{tf-input size="large"}}
-{{tf-input}} {{!-- size="default" by default --}}
-{{tf-input size="small"}}
+{{tf-input-text sizeStyle="large"}}
+{{tf-input-text}} {{!-- sizeStyle="default" by default --}}
+{{tf-input-text sizeStyle="small"}}
 ```
 
 Resulting HTML:
 ```html
-<input type="text" class="c-input u-input-large">
-<input type="text" class="c-input">
-<input type="text" class="c-input u-input-small">
+<input type="text" class="tf-input-text tf-input-text--large">
+<input type="text" class="tf-input-text">
+<input type="text" class="tf-input-text tf-input-text--small">
 ```
 
-**Input Block with Label & Description**
+**Form block with Label & Description**
 
 Template:
 
 ```hbs
-{{#tf-input-group size="large" as |group|}}
-  {{group.label "First Name"}}
-  {{group.input}}
-  {{group.description "You must provide a First Name"}}
-{{/tf-input-group}}
+{{#tf-form sizeStyle="large" as |form|}}
+  {{form.label "First Name"}}
+  {{form.input}}
+  {{form.description "You must provide a First Name"}}
+{{/tf-form}}
 ```
 
 Resulting HTML:
 
 ```html
-<div class="c-input-group">
-  <label class="u-label-large" for="random-uuid">First Name</label>
-  <input class="c-input u-input-large" type="text" id="random-uuid" aria-describedby="other-uuid">
-  <p class="u-description-large" id="other-uuid">You must provide a First Name</p>
+<div class="tf-form">
+  <label class="tf-form__label--large" for="random-uuid">First Name</label>
+  <input class="tf-input-text tf-form__input--large" type="text" id="random-uuid" aria-describedby="other-uuid">
+  <p class="tf-form__description--large" id="other-uuid">You must provide a First Name</p>
 </div>
 ```
 
-The contextual components for `tf-input-group` support overriding the size of child components such as:
+The contextual components for `tf-form` support overriding the size of child components such as:
 
 ```hbs
-{{#tf-input-group size="large" as |group|}}
-  {{group.label "First Name" }} <!--large, following group size-->
-  {{group.input }}  <!--large, following group size-->
-  {{group.description "You must provide a First Name" size="small"}} <!--small, overriding group size-->
-{{/tf-input-group}}
+{{#tf-form sizeStyle="large" as |form|}}
+  {{form.label "First Name" }} <!--large, following form size-->
+  {{form.input }}  <!--large, following form size-->
+  {{form.description "You must provide a First Name" sizeStyle="small"}} <!--small, overriding form size-->
+{{/tf-form}}
 ```
 
 **Input Validation States**
@@ -65,23 +65,23 @@ Template:
 {{tf-input should-validate=true is-valid=false}}
 {{tf-input should-validate=false is-valid=true}}
 
-{{#tf-input-group should-validate=true is-valid=false as |group|}}
-  {{group.label "First Name"}}
-  {{group.input}}
-  {{group.description "You must provide a First Name"}}
-{{/tf-input-group}}
+{{#tf-form should-validate=true is-valid=false as |form|}}
+  {{form.label "First Name"}}
+  {{form.input}}
+  {{form.description "You must provide a First Name"}}
+{{/tf-form}}
 ```
 
 Resulting HTML:
 
 ```html
-<input type="text" class="c-input is-valid">
-<input type="text" class="c-input is-invalid">
-<input type="text" class="c-input">
+<input type="text" class="tf-input-text is-valid">
+<input type="text" class="tf-input-text is-invalid">
+<input type="text" class="tf-input-text">
 
-<div class="c-input-group">
+<div class="tf-form">
   <label class="is-invalid" for="random-uuid">First Name</label>
-  <input class="c-input is-invalid" type="text" id="random-uuid" aria-describedby="other-uuid">
+  <input class="tf-input-text is-invalid" type="text" id="random-uuid" aria-describedby="other-uuid">
   <p class="is-invalid" id="other-uuid">You must provide a First Name</p>
 </div>
 ```
@@ -97,7 +97,7 @@ Template:
 Resulting HTML:
 
 ```html
-<textarea class="c-textarea"></textarea>
+<textarea class="tf-textarea"></textarea>
 ```
 
 ## Installation

@@ -1,18 +1,21 @@
 {{yield (hash
-  label=(component 'tf-input/input-label' 
+  label=(component 'tf-form/form-label' 
           sizeStyle=sizeStyle 
           for=inputGuid 
           shouldValidate=shouldValidate 
-          isValid=isValid)
-  input=(component 'tf-input' 
+          isValid=isValid
+          blockElementName='tf-form__label')
+  input=(component 'tf-input-text' 
           sizeStyle=sizeStyle 
           id=inputGuid 
           aria-describedby=describedByGuid 
           shouldValidate=shouldValidate 
-          isValid=isValid)
-  description=(component 'tf-input/input-description' 
+          isValid=isValid
+          blockElementName='tf-form__input')
+  description=(component 'tf-form/form-description' 
                 sizeStyle=sizeStyle 
                 id=describedByGuid 
                 shouldValidate=shouldValidate 
-                isValid=isValid)
+                isValid=isValid
+                blockElementName='tf-form__description')
 )}}

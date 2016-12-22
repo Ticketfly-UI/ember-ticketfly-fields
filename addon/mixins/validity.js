@@ -5,7 +5,7 @@ import Ember from 'ember';
 const { Mixin, computed, get } = Ember;
 
 /**
-  @class ValidityMixin
+  @class Validity
   @extends Ember.Mixin
  */
 export default Mixin.create({
