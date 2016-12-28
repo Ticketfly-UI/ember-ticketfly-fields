@@ -7,14 +7,14 @@ const { Component, guidFor, computed } = Ember;
 
 /**
   @public
-  @class TfForm
+  @class TfField
   @extends Ember.Component
  */
 export default Component.extend({
   layout,
   
-  tagName: 'form',
-  classNames: ['tf-form'],
+  tagName: 'div',
+  classNames: ['tf-field'],
 
   inputGuid: computed({
     get() {

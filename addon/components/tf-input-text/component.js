@@ -14,6 +14,6 @@ const { TextField } = Ember;
 export default TextField.extend(SizingMixin, ValidityMixin, {
   classNames: ['tf-input'],
   classNameBindings: ['sizing', 'validity', 'blockElementName'],
-  attributeBindings: ['aria-describedby'],
+  attributeBindings: ['aria-describedby', 'disabled'],
   blockElementName: 'tf-input-text'
 });

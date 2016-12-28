@@ -3,7 +3,7 @@
 This Ember addon provides the field components of the Ticketfly UI library. The components provided include:
 
 * `tf-input-text`
-* `tf-form`
+* `tf-field`
 * `tf-textarea`
 
 ## Usage
@@ -29,31 +29,31 @@ Resulting HTML:
 Template:
 
 ```hbs
-{{#tf-form sizeStyle="large" as |form|}}
+{{#tf-field sizeStyle="large" as |form|}}
   {{form.label "First Name"}}
   {{form.input}}
   {{form.description "You must provide a First Name"}}
-{{/tf-form}}
+{{/tf-field}}
 ```
 
 Resulting HTML:
 
 ```html
-<div class="tf-form">
-  <label class="tf-form__label--large" for="random-uuid">First Name</label>
-  <input class="tf-input-text tf-form__input--large" type="text" id="random-uuid" aria-describedby="other-uuid">
-  <p class="tf-form__description--large" id="other-uuid">You must provide a First Name</p>
+<div class="tf-field">
+  <label class="tf-field__label--large" for="random-uuid">First Name</label>
+  <input class="tf-input-text tf-field__input--large" type="text" id="random-uuid" aria-describedby="other-uuid">
+  <p class="tf-field__description--large" id="other-uuid">You must provide a First Name</p>
 </div>
 ```
 
-The contextual components for `tf-form` support overriding the size of child components such as:
+The contextual components for `tf-field` support overriding the size of child components such as:
 
 ```hbs
-{{#tf-form sizeStyle="large" as |form|}}
+{{#tf-field sizeStyle="large" as |form|}}
   {{form.label "First Name" }} <!--large, following form size-->
   {{form.input }}  <!--large, following form size-->
   {{form.description "You must provide a First Name" sizeStyle="small"}} <!--small, overriding form size-->
-{{/tf-form}}
+{{/tf-field}}
 ```
 
 **Input Validation States**
@@ -65,11 +65,11 @@ Template:
 {{tf-input should-validate=true is-valid=false}}
 {{tf-input should-validate=false is-valid=true}}
 
-{{#tf-form should-validate=true is-valid=false as |form|}}
+{{#tf-field should-validate=true is-valid=false as |form|}}
   {{form.label "First Name"}}
   {{form.input}}
   {{form.description "You must provide a First Name"}}
-{{/tf-form}}
+{{/tf-field}}
 ```
 
 Resulting HTML:
@@ -79,7 +79,7 @@ Resulting HTML:
 <input type="text" class="tf-input-text is-invalid">
 <input type="text" class="tf-input-text">
 
-<div class="tf-form">
+<div class="tf-field">
   <label class="is-invalid" for="random-uuid">First Name</label>
   <input class="tf-input-text is-invalid" type="text" id="random-uuid" aria-describedby="other-uuid">
   <p class="is-invalid" id="other-uuid">You must provide a First Name</p>

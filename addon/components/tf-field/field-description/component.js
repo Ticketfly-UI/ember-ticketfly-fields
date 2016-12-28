@@ -8,7 +8,7 @@ import layout from './template';
 const { Component } = Ember;
 
 /**
-  @class FormDescription
+  @class FieldDescription
   @extends Ember.Component
  */
 const InputDescriptionComponent = Component.extend(SizingMixin, ValidityMixin, {

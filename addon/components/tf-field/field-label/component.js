@@ -8,7 +8,7 @@ import layout from './template';
 const { Component } = Ember;
 
 /**
-  @class FormLabel
+  @class FieldLabel
   @extends Ember.Component
  */
 const InputLabelComponent = Component.extend(SizingMixin, ValidityMixin, {

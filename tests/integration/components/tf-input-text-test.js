@@ -35,3 +35,12 @@ test('validation states', function(assert) {
   this.set('isValid', false);
   assert.ok(this.$('input').hasClass('is-invalid'), 'Input is invalid');
 });
+
+test('binds disabled attribute to input', function(assert) {
+  this.render(hbs`
+    {{tf-input-text disabled=disabled}}
+  `);
+  assert.ok(!this.$('input').attr('disabled'), 'Not disabled by default');
+  this.set('disabled', true);
+  assert.ok(this.$('input').attr('disabled'), 'Disabled input');
+});

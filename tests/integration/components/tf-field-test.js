@@ -1,55 +1,55 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('tf-form', 'Integration | Component | tf-form', {
+moduleForComponent('tf-field', 'Integration | Component | tf-field', {
   integration: true
 });
 
-test('renders input in form', function(assert) {
+test('renders input in field', function(assert) {
   this.render(hbs`
-    {{#tf-form sizeStyle="large" as |form|}}
-      {{form.input}}
-    {{/tf-form}}
+    {{#tf-field sizeStyle="large" as |field|}}
+      {{field.input}}
+    {{/tf-field}}
   `);
-  assert.ok(this.$('form').hasClass('tf-form'), "Form renders");
-  assert.ok(this.$('input').hasClass('tf-form__input--large'), "Input is large");
+  assert.ok(this.$('div').hasClass('tf-field'), "field renders");
+  assert.ok(this.$('input').hasClass('tf-field__input--large'), "Input is large");
 });
 
 test('renders input-label', function(assert) {
   this.render(hbs`
-    {{#tf-form sizeStyle="large" as |form|}}
-      {{form.label "First Name"}}
-      {{form.input}}
-    {{/tf-form}}
+    {{#tf-field sizeStyle="large" as |field|}}
+      {{field.label "First Name"}}
+      {{field.input}}
+    {{/tf-field}}
   `);
   assert.equal(this.$('label').text(), 'First Name', "Label prints First Name");
   assert.equal(this.$('label').attr('for'), this.$('input').attr('id'), 
     "The label 'for' matches the input 'id'");
-  assert.ok(this.$('label').hasClass('tf-form__label--large'), "Label is large");
+  assert.ok(this.$('label').hasClass('tf-field__label--large'), "Label is large");
 });
 
 test('renders input-label', function(assert) {
   this.render(hbs`
-    {{#tf-form sizeStyle="large" as |form|}}
-      {{form.input}}
-      {{form.description "You must provide a First Name"}}
-    {{/tf-form}}
+    {{#tf-field sizeStyle="large" as |field|}}
+      {{field.input}}
+      {{field.description "You must provide a First Name"}}
+    {{/tf-field}}
   `);
-  assert.ok(this.$('p').hasClass('tf-form__description--large'), "Description is large");
+  assert.ok(this.$('p').hasClass('tf-field__description--large'), "Description is large");
   assert.equal(this.$('p').text(), 'You must provide a First Name', "Description text shows");
   assert.equal(this.$('input').attr('aria-describedby'), this.$('p').attr('id'), 
     "The input aria-describedby matches the <p> id");
 });
 
-test('validates form', function(assert) {
+test('validates field', function(assert) {
   this.set('shouldValidate', false);
   this.set('isValid', true);
   this.render(hbs`
-    {{#tf-form shouldValidate=shouldValidate isValid=isValid as |form|}}
-      {{form.label "First Name"}}
-      {{form.input}}
-      {{form.description "You must provide a First Name"}}
-    {{/tf-form}}
+    {{#tf-field shouldValidate=shouldValidate isValid=isValid as |field|}}
+      {{field.label "First Name"}}
+      {{field.input}}
+      {{field.description "You must provide a First Name"}}
+    {{/tf-field}}
   `);
   assert.ok(!this.$('input, label, p').hasClass('is-valid') || !this.$('input, label, p').hasClass('is-invalid'),
     'No class for validity when shouldValidate is false');
