@@ -1,0 +1,21 @@
+{{yield (hash
+  label=(component 'tf-field/field-label' 
+          sizeStyle=sizeStyle 
+          for=inputGuid 
+          shouldValidate=shouldValidate 
+          isValid=isValid
+          blockElementName='tf-field__label')
+  input=(component 'tf-input-text' 
+          sizeStyle=sizeStyle 
+          id=inputGuid 
+          aria-describedby=describedByGuid 
+          shouldValidate=shouldValidate 
+          isValid=isValid
+          blockElementName='tf-field__input')
+  description=(component 'tf-field/field-description' 
+                sizeStyle=sizeStyle 
+                id=describedByGuid 
+                shouldValidate=shouldValidate 
+                isValid=isValid
+                blockElementName='tf-field__description')
+)}}
