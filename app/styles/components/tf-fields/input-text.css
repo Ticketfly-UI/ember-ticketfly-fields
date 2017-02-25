@@ -1,0 +1,48 @@
+/*
+  Input
+*/
+
+.c-tf-fields__input-text {
+  min-width: var(--tf-input-text-min-width);
+  border-radius: var(--tf-input-text-border-radius);
+  border: var(--tf-input-text-border);
+  color: var(--tf-input-text-input-color);
+  padding: var(--tf-input-text-padding);
+  font-size: var(--tf-input-text-font-size);
+}
+
+.c-tf-fields__input-text:active {
+  border-color: var(--tf-input-text-border-color-active);
+}
+
+.c-tf-fields__input-text:hover {
+  border-color: var(--x-color-gray-8);
+}
+
+/*
+  Size
+*/
+
+.c-tf-fields__input-text--default {
+  min-height: var(--tf-input-text-min-height);
+}
+
+.c-tf-fields__input-text--small {
+  min-height: var(--tf-input-text-min-height-small);
+}
+
+.c-tf-fields__input-text--large {
+  min-height: var(--tf-input-text-min-height-large);
+}
+
+/*
+  Disabled  
+*/
+
+.c-tf-fields__input-text--disabled {
+  background-color: var(--tf-input-text-background-color-disabled);
+}
+
+.c-tf-fields__input-text--disabled:hover {
+  border-color: var(--tf-input-text-border-color);
+}

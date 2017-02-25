@@ -1,0 +1,14 @@
+/*
+  Label
+*/
+
+.c-tf-fields__label {
+  font-size: var(--tf-label-font-size);
+  color: var(--tf-label-color);
+
+  /* adds line break after label */
+  content: '\A'; 
+  white-space: pre;
+}
+
+

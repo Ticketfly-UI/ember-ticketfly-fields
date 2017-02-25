@@ -1,0 +1,26 @@
+/*
+  Variables
+*/
+
+.c-tf-fields {
+  --tf-input-text-min-width: 17.81rem; /* 285px */
+  --tf-input-text-min-height: 2.25rem; /* 36px */
+  --tf-input-text-min-height-small: 2rem; /* 32px */
+  --tf-input-text-min-height-large: 2.875rem; /* 46px */
+
+  --tf-input-text-border-color: #CED1DB;
+  --tf-input-text-border: 1px solid var(--tf-input-text-border-color);
+  --tf-input-text-border-radius: 2px;
+  --tf-input-text-border-color-active: #6254E8;
+
+  --tf-input-text-input-color: var(--x-color-gray-7);
+  --tf-input-text-label-color: var(--x-color-gray-5);
+
+  --tf-input-text-padding: 0.5rem;
+  --tf-input-text-font-size: 0.875rem; /* 14px */
+
+  --tf-input-text-background-color-disabled: var(--x-color-gray-1);
+
+  --tf-label-font-size: 0.875rem; /* 14px */
+  --tf-label-color: var(--x-color-gray-5);
+}
