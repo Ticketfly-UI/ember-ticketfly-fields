@@ -42,6 +42,7 @@
     "ember-hook": "1.4.1",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
+    "ember-sinon": "0.6.0",
     "loader.js": "^4.0.10",
     "ticketfly-css": "0.4.4"
   },

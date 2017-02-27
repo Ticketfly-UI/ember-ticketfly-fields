@@ -1,11 +1,11 @@
 {{#if hasBlock}}
   {{yield (hash
-    label=(component 'tf-fields/label' for=inputId)
+    label=(component 'tf-fields/label-text' for=inputId)
     input=(component 'tf-fields/input-text' id=inputId sizeGroup=sizeGroup disabled=disabled)
   )}}
 {{else}}
   {{#if hasLabel}}
-    {{tf-fields/label label hideLabel=hideLabel for=inputId}}
+    {{tf-fields/label-text label hideLabel=hideLabel for=inputId}}
   {{/if}}
   {{tf-fields/input-text value=value id=inputId aria-label=ariaLabel aria-describedby=ariaDescribedby role=role sizeGroup=sizeGroup disabled=disabled}}
 {{/if}}

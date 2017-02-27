@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import sinon from 'sinon';
 
 moduleForComponent('tf-fields/input-text', 'Integration | Component | tf fields/input text', {
   integration: true
@@ -33,4 +34,21 @@ test('receives sizeGroup', function(assert) {
   this.render(hbs`{{tf-fields/input-text sizeGroup="large"}}`);
 
   assert.ok(this.$('input').hasClass('c-tf-fields__input-text--large'), "sizeGroup is passed in to the input's class");
+});
+
+test('logs warning for invalid sizeGroup', function(assert) {
+  const spy = sinon.spy(console, 'log');
+  const sizeGroup = "invalid-size";
+
+  this.set('sizeGroup', sizeGroup);
+
+  this.render(hbs`{{tf-fields/input-text sizeGroup=sizeGroup}}`);
+
+  const id = this.$('input').attr('id');
+  const expectedLogMsg = `input-text component #${id}: '${sizeGroup}' is not a valid sizeGroup. Only 'small', 'medium', 'large' are supported.`;
+
+  assert.ok(spy.calledOnce, "Console logs if invalid sizeGroup");
+  assert.equal(spy.args[0], expectedLogMsg, "Console logs available options and component id");
+
+  console.log.restore();
 });

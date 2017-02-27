@@ -27,8 +27,8 @@ export default Component.extend({
   },
 
   classNames: ['c-tf-input-text'],
-  
-  sizeGroup: 'default',
+
+  sizeGroup: 'medium',
 
   hideLabel: false,
   label: '',

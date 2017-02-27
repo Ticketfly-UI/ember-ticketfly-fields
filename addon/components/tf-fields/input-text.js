@@ -7,9 +7,9 @@ import computed from 'ember-computed';
 import get from 'ember-metal/get';
 const { TextField } = Ember;
 
-/**
-  sizeGroup options: 'large', 'small', 'default'
+const SIZE_GROUPS = ['small', 'medium', 'large'];
 
+/**
   @public
   @class TfFieldsInputText
   @extends Ember.TextField
@@ -17,11 +17,22 @@ const { TextField } = Ember;
 export default TextField.extend({
   layout,
 
-  classNames: ['c-tf-fields__input-text', 'c-tf-fields'],
+  classNames: ['c-tf-fields__input-text'],
   attributeBindings: ['aria-label', 'aria-describedby', 'role'],
   classNameBindings: ['sizeCategory', 'disabled:c-tf-fields__input-text--disabled'],
 
-  sizeGroup: 'default',
+  sizeGroup: 'medium',
+
+  didInsertElement() {
+    this._super(...arguments);
+    
+    const sizeGroup = get(this, 'sizeGroup');
+    const id = this.$().attr('id');
+
+    if(SIZE_GROUPS.indexOf(sizeGroup) === -1) {
+      console.log(`input-text component #${id}: '${sizeGroup}' is not a valid sizeGroup. Only 'small', 'medium', 'large' are supported.`);
+    }
+  },
 
   sizeCategory: computed('sizeGroup', {
     get() {
