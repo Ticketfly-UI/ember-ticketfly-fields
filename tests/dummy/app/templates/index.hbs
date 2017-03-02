@@ -1,0 +1,74 @@
+<h1>tf-input-text</h1>
+
+<p class="u-m-0">Size: 285px x 36px / Small - 285px x 32px / Large - 285px x 46px</p>
+<p class="u-m-0 u-mb-md">Default sizeGroup is "medium". Receives "small" and "large"</p>
+<p class="u-m-0 u-mb-md">Use labels and aria attributes for accessibility (recommended).</p>
+
+<h2>No parameters</h2>
+
+{{! BEGIN-SNIPPET no-params }}
+{{tf-input-text}}
+{{! END-SNIPPET }}
+
+{{code-snippet name="no-params.hbs" class="u-mv-md u-p-md"}}
+
+<h2>Inline value</h2>
+
+{{! BEGIN-SNIPPET value}}
+{{tf-input-text value="Nothin' much" label="What's Up"}}
+{{! END-SNIPPET }}
+
+{{code-snippet name="value.hbs" class="u-mv-md u-p-md"}}
+
+<h2>Hide label</h2>
+
+{{! BEGIN-SNIPPET hide-label }}
+{{tf-input-text label="You can't see me" hideLabel=true}}
+{{! END-SNIPPET }}
+
+{{code-snippet name="hide-label.hbs" class="u-mv-md u-p-md"}}
+
+<h2>Inline inputId</h2>
+
+{{! BEGIN-SNIPPET input-id }}
+{{tf-input-text inputId="123" label='Inspect to see that the "for" value matches input "id"'}}
+{{! END-SNIPPET }}
+
+{{code-snippet name="input-id.hbs" class="u-mv-md u-p-md"}}
+
+<h2>Aria params</h2>
+
+{{! BEGIN-SNIPPET aria-params }}
+{{tf-input-text ariaLabel="Labely" ariaDescribedby="Describedy" role="textbox" label="Inspect input to see aria attributes"}}
+{{! END-SNIPPET }}
+
+{{code-snippet name="aria-params.hbs" class="u-mv-md u-p-md"}}
+
+<h2>Size group</h2>
+
+{{! BEGIN-SNIPPET size-group }}
+{{tf-input-text sizeGroup="small" label="Small"}}
+{{tf-input-text label="Default"}}
+{{tf-input-text sizeGroup="large" label="Large"}}
+{{! END-SNIPPET }}
+
+{{code-snippet name="size-group.hbs" class="u-mv-md u-p-md"}}
+
+<h2>Disabled</h2>
+
+{{! BEGIN-SNIPPET disabled }}
+{{tf-input-text value="Disabled with value" disabled=true}}
+{{! END-SNIPPET }}
+
+{{code-snippet name="disabled.hbs" class="u-mv-md u-p-md"}}
+
+<h2>Block form</h2>
+
+{{! BEGIN-SNIPPET block-form}}
+  {{#tf-input-text as |group|}}
+    {{group.label "Sweet sweet"}}
+    {{group.input value="Soda pop"}}
+  {{/tf-input-text}}
+{{! END-SNIPPET }}
+
+{{code-snippet name="block-form.hbs" class="u-mv-md u-p-md"}}
